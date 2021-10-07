@@ -15,13 +15,13 @@ class FormCaptura extends React.Component
     }
   };
   
-  /*meódo para um evento -- vai guardar o valor obtido em num01 - metódo vai ser parâmetro para onchange usar é preciso guardar o valor 
+  /*método para um evento -- vai guardar o valor obtido em num01 - metódo vai ser parâmetro para onchange usar é preciso guardar o valor 
   em alguma variavel /atributo - por isso deve ter o método construtor o this diz que estou usando um metodo de uma intancia
   bind = faz associação de um objeto com outro metodo quando quero q o novo metodo use metodos da instancia*/
  handleNum1(evento) 
  {
   this.setState({num1: evento.target.value});
-  console.log(this.num1) //toda vez que input mudar é chamado esse evento - e armazena em Num1
+   //toda vez que input mudar é chamado esse evento - e armazena em Num1
  }
  handleNum2(evento) 
  {
@@ -30,8 +30,8 @@ class FormCaptura extends React.Component
   
   handleOperacao(evento) 
   {
-    let resultado
-    evento.preventDefault();
+    let resultado = "";
+    //evento.preventDefault();
     if (evento.target.value === 'Adição') {
 
       resultado = parseFloat(this.state.num1,10) + parseFloat(this.state.num2,10);
@@ -56,7 +56,7 @@ class FormCaptura extends React.Component
     return (
       <div>
         <form>
-          <label for="readOnly">Número 01:</label>
+          <label for="readOnly">Número 01: </label>
           <input
             type="text"
             id=""
@@ -66,7 +66,7 @@ class FormCaptura extends React.Component
           />
           <br />
           <br />
-          <label for="readOnly">Número 02:</label>
+          <label for="readOnly">Número 02: </label>
           <input
             type="text"
             id=""
@@ -75,7 +75,7 @@ class FormCaptura extends React.Component
             onChange={this.handleNum2.bind(this)}
           />
           <br /> <br />
-          <h6>Operacoes</h6>
+          <h6>Operações</h6>
           <input
             type="radio"
             id="adicao"
@@ -83,7 +83,7 @@ class FormCaptura extends React.Component
             value="Adição"
             onChange={this.handleOperacao.bind(this)}
           />
-          <label for="Adição">Adição</label>
+          <label for="Adição">Adição: </label>
           <br />
           <input
             type="radio"
@@ -92,7 +92,7 @@ class FormCaptura extends React.Component
             value="Subtração"
             onClick={this.handleOperacao.bind(this)}
           />
-          <label for="Subtração">Subtração</label>
+          <label for="Subtração">Subtração: </label>
           <br />
           <input
             type="radio"
@@ -101,7 +101,7 @@ class FormCaptura extends React.Component
             value="Multiplicação"
             onClick={this.handleOperacao.bind(this)}
           />
-          <label for="Multiplicação">Multiplicação</label>
+          <label for="Multiplicação">Multiplicação: </label>
           <br />
           <input
             type="radio"
@@ -110,9 +110,9 @@ class FormCaptura extends React.Component
             value="Divisão"
             onClick={this.handleOperacao.bind(this)}
           />
-          <label for="Divisão">Divisão</label>
+          <label for="Divisão">Divisão: </label>
           <br />
-          <label for="resultado">Resultado:</label>
+          <label for="resultado">Resultado: </label>
           <input type="text" id="" name="resultado" value={this.state.resultado} />
         </form>
       </div>
