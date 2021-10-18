@@ -54,10 +54,11 @@ class FormCaptura extends React.Component
 
   render() {
     return (
-      <div>
-        <form>
-          <label for="readOnly">Número 01: </label>
+      <div className="container">
+        <form >
+          <label className="container-label" for="readOnly">Número 01: </label>
           <input
+          className="container-input"
             type="text"
             id=""
             name="num1"
@@ -66,7 +67,7 @@ class FormCaptura extends React.Component
           />
           <br />
           <br />
-          <label for="readOnly">Número 02: </label>
+          <label className="container-label" for="readOnly">Número 02: </label>
           <input
             type="text"
             id=""
@@ -75,8 +76,12 @@ class FormCaptura extends React.Component
             onChange={this.handleNum2.bind(this)}
           />
           <br /> <br />
+          <div>
+        
           <h6>Operações</h6>
+          
           <input
+          className="container-input"
             type="radio"
             id="adicao"
             name="oper"
@@ -86,6 +91,7 @@ class FormCaptura extends React.Component
           <label for="Adição">Adição: </label>
           <br />
           <input
+          className="container-input"
             type="radio"
             id="sub"
             name="oper"
@@ -95,6 +101,7 @@ class FormCaptura extends React.Component
           <label for="Subtração">Subtração: </label>
           <br />
           <input
+          className="container-input"
             type="radio"
             id="multi"
             name="oper"
@@ -104,6 +111,7 @@ class FormCaptura extends React.Component
           <label for="Multiplicação">Multiplicação: </label>
           <br />
           <input
+          className="container-input"
             type="radio"
             id="divi"
             name="oper"
@@ -111,8 +119,9 @@ class FormCaptura extends React.Component
             onClick={this.handleOperacao.bind(this)}
           />
           <label for="Divisão">Divisão: </label>
+          </div>
           <br />
-          <label for="resultado">Resultado: </label>
+          <label className="container-label"  for="resultado">Resultado: </label>
           <input type="text" id="" name="resultado" value={this.state.resultado} />
         </form>
       </div>
